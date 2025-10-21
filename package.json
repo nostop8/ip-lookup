@@ -1,0 +1,29 @@
+{
+  "name": "ip-lookup-monorepo",
+  "version": "1.0.0",
+  "description": "IP lookup application monorepo",
+  "private": true,
+  "workspaces": [
+    "packages/shared",
+    "packages/backend",
+    "packages/react-app"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:react\"",
+    "dev:backend": "npm run dev --workspace=packages/backend",
+    "dev:react": "npm run dev --workspace=packages/react-app",
+    "build": "npm run build --workspaces",
+    "clean": "npm run clean --workspaces --if-present",
+    "type-check": "npm run type-check --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "lint:fix": "npm run lint:fix --workspaces --if-present"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "typescript": "^5.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}
