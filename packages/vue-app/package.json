@@ -1,0 +1,44 @@
+{
+  "name": "@ip-lookup/vue-app",
+  "version": "1.0.0",
+  "description": "IP lookup Vue frontend",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run build-shared && vite build",
+    "build-shared": "cd ../../ && npm run build --workspace=packages/shared",
+    "preview": "vite preview",
+    "type-check": "vue-tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:ci": "jest --ci --coverage --watchAll=false",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@ip-lookup/shared": "file:../shared",
+    "vue": "^3.3.8"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/jest": "^30.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.46.2",
+    "@typescript-eslint/parser": "^8.46.2",
+    "@vitejs/plugin-vue": "^4.5.0",
+    "@vue/test-utils": "^2.4.6",
+    "@vue/vue3-jest": "^29.2.6",
+    "eslint": "^9.38.0",
+    "eslint-plugin-vue": "^10.5.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^29.7.0",
+    "jsdom": "^27.0.1",
+    "ts-jest": "^29.4.5",
+    "typescript": "^5.2.2",
+    "vite": "^4.5.0",
+    "vue-eslint-parser": "^10.2.0",
+    "vue-tsc": "^2.2.12"
+  }
+}
