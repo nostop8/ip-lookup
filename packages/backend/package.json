@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "tsx watch src/server.ts",
-    "build": "tsc",
-    "start": "node dist/server.js",
+    "build": "tsc && cd ../../ && npm run build --workspace=packages/shared",
+    "start": "node dist/backend/src/server.js",
     "type-check": "tsc --noEmit",
     "clean": "rm -rf dist",
     "test": "jest",
