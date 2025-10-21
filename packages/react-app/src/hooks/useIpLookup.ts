@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 import { IpInput } from "../types";
-import { isValidIp } from "@ip-lookup/shared/src/validation";
+import { isValidIp } from "@ip-lookup/shared";
 import { ipLookup, ResponseError } from "../services/api";
 
 export const useIpLookup = (updateInput: (input: IpInput) => void) => {

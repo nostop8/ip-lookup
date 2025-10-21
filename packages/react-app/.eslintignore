@@ -1,8 +1,0 @@
-dist/
-build/
-node_modules/
-*.js
-*.config.js
-*.config.ts
-coverage/
-public/

@@ -5,6 +5,8 @@ export default {
   extensionsToTreatAsEsm: ['.ts', '.tsx'],
   moduleNameMapper: {
     '^(\\.{1,2}/.*)\\.js$': '$1',
+    '^@ip-lookup/shared$': '<rootDir>/../shared/src/index.ts',
+    '^@ip-lookup/shared/(.*)$': '<rootDir>/../shared/src/$1',
     '\\.(css|less|scss|sass)$': 'identity-obj-proxy'
   },
   transform: {

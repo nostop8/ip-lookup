@@ -1,6 +1,0 @@
-dist/
-node_modules/
-*.js
-*.config.js
-*.config.ts
-coverage/

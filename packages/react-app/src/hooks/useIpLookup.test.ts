@@ -2,7 +2,7 @@ import { renderHook, act } from "@testing-library/react";
 import { useIpLookup } from "./useIpLookup";
 import { IpInput } from "../types";
 
-jest.mock("@ip-lookup/shared/src/validation", () => ({
+jest.mock("@ip-lookup/shared", () => ({
   isValidIp: jest.fn(),
 }));
 
@@ -11,7 +11,7 @@ jest.mock("../services/api", () => ({
   ipLookup: jest.fn(),
 }));
 
-const { isValidIp } = require("@ip-lookup/shared/src/validation");
+const { isValidIp } = require("@ip-lookup/shared");
 const { ipLookup, ResponseError } = require("../services/api");
 
 describe("useIpLookup", () => {
