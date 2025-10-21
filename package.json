@@ -6,13 +6,15 @@
   "workspaces": [
     "packages/shared",
     "packages/backend",
-    "packages/react-app"
+    "packages/react-app",
+    "packages/vue-app"
   ],
   "scripts": {
-    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:react\"",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:react\" \"npm run dev:vue\"",
     "dev:backend": "npm run dev --workspace=packages/backend",
     "dev:react": "npm run dev --workspace=packages/react-app",
-    "build": "npm run build --workspace=packages/shared && npm run build --workspace=packages/backend && npm run build --workspace=packages/react-app",
+    "dev:vue": "npm run dev --workspace=packages/vue-app",
+    "build": "npm run build --workspace=packages/shared && npm run build --workspace=packages/backend && npm run build --workspace=packages/react-app && npm run build --workspace=packages/vue-app",
     "clean": "npm run clean --workspaces --if-present",
     "type-check": "npm run type-check --workspaces --if-present",
     "test": "npm run test --workspaces --if-present",

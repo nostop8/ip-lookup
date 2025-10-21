@@ -1,6 +1,6 @@
 import { ref, readonly } from 'vue'
 import type { IpInput } from '../types'
-import { isValidIp } from '@ip-lookup/shared/src/validation'
+import { isValidIp } from '@ip-lookup/shared'
 import { ipLookup, ResponseError } from '../services/api'
 
 export function useIpLookup(updateInput: (input: IpInput) => void) {
@@ -49,9 +49,7 @@ export function useIpLookup(updateInput: (input: IpInput) => void) {
 
   const handleBlur = (input: IpInput, value: string) => {
     const trimmedValue = value.trim()
-    if (trimmedValue !== input.value.trim()) {
-      lookupIp({ ...input, value: trimmedValue })
-    }
+    lookupIp({ ...input, value: trimmedValue })
   }
 
   return {

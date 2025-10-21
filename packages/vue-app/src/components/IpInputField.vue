@@ -59,6 +59,8 @@ const props = defineProps<Props>()
 
 const { handleBlur: handleIpBlur } = useIpLookup(props.onUpdate)
 
+let lastProcessedValue = props.input.value
+
 const inputClasses = computed(() => [
   'ip-input',
   {
@@ -75,6 +77,12 @@ const handleInput = (event: Event) => {
 
 const handleBlur = (event: Event) => {
   const target = event.target as HTMLInputElement
-  handleIpBlur(props.input, target.value)
+  const trimmedValue = target.value.trim()
+  
+  if (trimmedValue !== lastProcessedValue.trim()) {
+    lastProcessedValue = trimmedValue
+    const currentInput = { ...props.input, value: lastProcessedValue }
+    handleIpBlur(currentInput, trimmedValue)
+  }
 }
 </script>

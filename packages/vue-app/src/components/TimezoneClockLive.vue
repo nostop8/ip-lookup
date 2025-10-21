@@ -27,7 +27,7 @@ const updateTime = () => {
       second: '2-digit'
     })
     time.value = timeString
-  } catch (error) {
+  } catch {
     time.value = 'Invalid timezone'
   }
 }
