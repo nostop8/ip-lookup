@@ -51,7 +51,7 @@ import { useIpLookup } from '../composables/useIpLookup'
 interface Props {
   input: IpInput
   index: number
-  onRemove?: (id: string) => void
+  onRemove?: (id: number) => void
   onUpdate: (input: IpInput) => void
 }
 
