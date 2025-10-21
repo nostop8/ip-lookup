@@ -4,7 +4,9 @@ export default {
   testEnvironment: 'node',
   extensionsToTreatAsEsm: ['.ts'],
   moduleNameMapper: {
-    '^(\\.{1,2}/.*)\\.js$': '$1'
+    '^(\\.{1,2}/.*)\\.js$': '$1',
+    '^@ip-lookup/shared$': '<rootDir>/../shared/src/index.ts',
+    '^@ip-lookup/shared/(.*)$': '<rootDir>/../shared/src/$1'
   },
   transform: {
     '^.+\\.ts$': ['ts-jest', {
