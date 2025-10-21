@@ -1,7 +1,7 @@
 import express, { Request, Response } from 'express';
 import cors from 'cors';
 import geoip from 'geoip-lite';
-import { isValidIp } from '@ip-lookup/shared/src/validation';
+import { isValidIp } from '@ip-lookup/shared';
 
 const app = express();
 

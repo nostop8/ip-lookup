@@ -7,12 +7,14 @@ on:
       - 'packages/shared/**'
       - 'package.json'
       - 'package-lock.json'
+      - '.github/workflows/backend-ci.yml'
   pull_request:
     paths:
       - 'packages/backend/**'
       - 'packages/shared/**'
       - 'package.json'
       - 'package-lock.json'
+      - '.github/workflows/backend-ci.yml'
 
 jobs:
   backend-ci:

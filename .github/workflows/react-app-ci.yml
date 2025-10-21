@@ -7,12 +7,14 @@ on:
       - 'packages/shared/**'
       - 'package.json'
       - 'package-lock.json'
+      - '.github/workflows/react-app-ci.yml'
   pull_request:
     paths:
       - 'packages/react-app/**'
       - 'packages/shared/**'
       - 'package.json'
       - 'package-lock.json'
+      - '.github/workflows/react-app-ci.yml'
 
 jobs:
   react-app-ci:

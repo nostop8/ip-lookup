@@ -12,9 +12,10 @@
     "dev": "concurrently \"npm run dev:backend\" \"npm run dev:react\"",
     "dev:backend": "npm run dev --workspace=packages/backend",
     "dev:react": "npm run dev --workspace=packages/react-app",
-    "build": "npm run build --workspaces",
+    "build": "npm run build --workspace=packages/shared && npm run build --workspace=packages/backend && npm run build --workspace=packages/react-app",
     "clean": "npm run clean --workspaces --if-present",
     "type-check": "npm run type-check --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
     "lint": "npm run lint --workspaces --if-present",
     "lint:fix": "npm run lint:fix --workspaces --if-present"
   },
