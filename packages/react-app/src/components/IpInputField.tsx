@@ -6,8 +6,8 @@ import { useIpLookup } from "../hooks/useIpLookup";
 interface IpInputFieldProps {
   input: IpInput;
   index: number;
-  onUpdate: (input: IpInput) => void;
-  onRemove?: (id: number) => void;
+  onUpdate: (_updatedInput: IpInput) => void;
+  onRemove?: (_inputId: number) => void;
 }
 
 export const IpInputField: React.FC<IpInputFieldProps> = React.memo(

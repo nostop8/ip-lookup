@@ -3,7 +3,7 @@ import { IpInput } from "../types";
 import { isValidIp } from "@ip-lookup/shared";
 import { ipLookup, ResponseError } from "../services/api";
 
-export const useIpLookup = (updateInput: (input: IpInput) => void) => {
+export const useIpLookup = (updateInput: (_updatedInput: IpInput) => void) => {
   const lookupIp = useCallback(async (input: IpInput) => {
     const ip = input.value.trim();
     if (!ip) {
@@ -38,7 +38,7 @@ export const useIpLookup = (updateInput: (input: IpInput) => void) => {
         });
       }
     }
-  }, []);
+  }, [updateInput]);
 
   const handleBlur = useCallback(
     (input: IpInput, value: string) => {
