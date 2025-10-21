@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc && npm run build-shared && vite build",
+    "build-shared": "cd ../../ && npm run build --workspace=packages/shared",
     "preview": "vite preview",
     "type-check": "tsc --noEmit",
     "clean": "rm -rf dist",
