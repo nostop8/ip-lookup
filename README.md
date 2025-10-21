@@ -23,6 +23,7 @@ A full-stack application for looking up country and timezone information based o
    This starts:
    - Backend API on http://localhost:3001
    - React app on http://localhost:5173
+   - Vue app on http://localhost:5174
 
 ## Features
 
