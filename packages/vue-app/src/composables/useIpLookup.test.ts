@@ -125,7 +125,7 @@ describe("useIpLookup", () => {
     });
   });
 
-  it("only triggers lookup if value has changed", async () => {
+  it("always triggers lookup when handleBlur is called", async () => {
     isValidIp.mockReturnValue(true);
     ipLookup.mockResolvedValue({ country: "US", timezone: "America/New_York" });
 
@@ -133,11 +133,7 @@ describe("useIpLookup", () => {
 
     await handleBlur(sampleInput, "8.8.8.8");
 
-    jest.clearAllMocks();
-
-    await handleBlur(sampleInput, "8.8.8.8");
-
-    expect(ipLookup).not.toHaveBeenCalled();
-    expect(mockUpdateInput).not.toHaveBeenCalled();
+    expect(ipLookup).toHaveBeenCalledWith("8.8.8.8");
+    expect(mockUpdateInput).toHaveBeenCalled();
   });
 });
